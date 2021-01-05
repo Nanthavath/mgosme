@@ -6,8 +6,9 @@ import 'package:mgosme/pages/logins/switch_page.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(MaterialApp(home: MyApp()));
 }
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,4 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
