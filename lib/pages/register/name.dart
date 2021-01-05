@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'adapter/user_adapter.dart';
-import 'get_gender_page.dart';
+import 'gender.dart';
 import 'widgets/button_next.dart';
 
 // ignore: must_be_immutable
@@ -34,7 +33,8 @@ class GetNamePage extends StatelessWidget {
                             children: [
                               Image(
                                 image: AssetImage('images/account.png'),
-                                width: 40,height: 40,
+                                width: 40,
+                                height: 40,
                               ),
                               Text(
                                 'ໃສ່ຊື່ ແລະ ນາມສະກຸນຂອງທ່ານ',
@@ -49,13 +49,25 @@ class GetNamePage extends StatelessWidget {
                               Row(
                                 children: [
                                   Expanded(
-                                    child: nameText(),
+                                    child: textInput(
+                                      controller: nameController,
+                                      label: 'ຊື່',
+                                      validator: (value) => value.isEmpty
+                                          ? 'ກະລຸນາໃສ່ຊື່ຂອງທ່ານ'
+                                          : null,
+                                    ),
                                   ),
                                   SizedBox(
                                     width: 10,
                                   ),
                                   Expanded(
-                                    child: surnameText(),
+                                    child: textInput(
+                                      controller: surnameController,
+                                      label: 'ນາມສະກຸນ',
+                                      validator: (value) => value.isEmpty
+                                          ? 'ກະລຸນາໃສ່ນາມສະກຸນ່ຂອງທ່ານ'
+                                          : null,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -109,23 +121,20 @@ class GetNamePage extends StatelessWidget {
     );
   }
 
-  Widget nameText() => TextFormField(
-        validator: (value) => value.isEmpty ? 'ກະລຸນາໃສ່ຊື່ຂອງທ່ານ' : null,
-        controller: nameController,
-        style: TextStyle(fontSize: 18),
-        decoration: InputDecoration(
-          labelText: 'ຊື່',
-          isDense: true,
-        ),
-      );
+  Widget textInput({
+    TextEditingController controller,
+    String label,
+    FormFieldValidator<String> validator,
+  }) {
+    return TextFormField(
+      style: TextStyle(fontSize: 18),
+      controller: controller,
+      decoration: InputDecoration(labelText: label, isDense: true),
+      validator: validator,
+    );
+  }
 
-  Widget surnameText() => TextFormField(
-        validator: (value) => value.isEmpty ? 'ກະລຸນາໃສ່ນາມສະກຸນຂອງທ່ານ' : null,
-        controller: surnameController,
-        style: TextStyle(fontSize: 18),
-        decoration: InputDecoration(
-          labelText: 'ນາມສະກຸນ',
-          isDense: true,
-        ),
-      );
+
+
+
 }

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'adapter/user_adapter.dart';
-import 'get_email_page.dart';
+import 'email.dart';
 import 'widgets/backToLoginButton.dart';
 import 'widgets/button_next.dart';
 

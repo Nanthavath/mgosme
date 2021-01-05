@@ -96,7 +96,7 @@ class _MoreState extends State<More> {
                       : Image.network(data['urlProfile'],
                           width: 40, height: 40),
                 ),
-                title: Text('${data['full_name']} '),
+                title: Text('${data['name']} ${data['surname']} '),
                 //trailing: Icon(Icons.arrow_forward_ios_sharp),
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(

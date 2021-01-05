@@ -10,7 +10,7 @@ import 'screen/home_app/my_jobs/my_job.dart';
 
 class HomePage extends StatefulWidget {
   final String uid;
-   bool position;
+  bool position;
 
   HomePage({this.uid, this.position});
 
@@ -35,18 +35,19 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    setState(() {
-      if (position == true) {
-        swapped = Home(uid: uid);
-      } else {
-        swapped = UserHomePage(uid: uid);
-      }
-
-      currentScreen = swapped;
-    });
+    // setState(() {
+    //   if (position == true) {
+    //     swapped = Home(uid: uid);
+    //   } else {
+    //     swapped = UserHomePage(uid: uid);
+    //   }
+    //
+    //   currentScreen = swapped;
+    // });
+    currentScreen = Home(uid: uid);
 
     screen = [
-      swapped,
+      Home(uid: uid),
       MyJob(uid: uid),
       Chats(),
       More(),

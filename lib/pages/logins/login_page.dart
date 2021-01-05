@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mgosme/authen_service/firebase_auth.dart';
-import 'package:mgosme/pages/create_account/intro_page.dart';
-import 'package:mgosme/pages/create_account/widgets/alert_dialog.dart';
-import 'package:mgosme/pages/create_account/widgets/image_slider.dart';
 import 'package:mgosme/pages/logins/switch_page.dart';
+import 'package:mgosme/pages/register/intro_page.dart';
+import 'package:mgosme/pages/register/widgets/alert_dialog.dart';
+import 'package:mgosme/pages/register/widgets/image_slider.dart';
 
 
 

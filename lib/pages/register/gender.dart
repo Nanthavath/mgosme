@@ -18,51 +18,59 @@ class _GetGenderPageState extends State<GetGenderPage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          child: Center(
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: BackButton(),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.only(
-                        left: 15, right: 15, bottom: 15, top: 20),
-                    child: Column(
-                      children: [
-                        Image(
-                          image: AssetImage('images/gender.png',),width: 40,
-                        ),
-                        Text(
-                          'ກະລຸນາເລືອກເພດ',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        Text('ທ່ານສາມາດປ່ຽນສະຖານະເພດໃນໜ້າຂໍ້ມູນສ່ວນໂຕຂອງທ່ານ'),
-                        GenderSelected(),
-                        SizedBox(
-                          height: 50,
-                        ),
-                        NextButton(
-                          title: 'ຖັດໄປ',
-                          onPress: () {
-                            if (userModel.sex == null) {
-                              _showDialog();
-                            } else {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => BirthDayPage(),
-                                ),
-                              );
-                            }
-                          },
-                        ),
-                      ],
+          child: Stack(
+            children: [
+
+              Container(
+                child: SingleChildScrollView(
+                  child:  Container(
+                      margin:
+                      EdgeInsets.only(left: 15, right: 15, bottom: 15, top: 20),
+                      child: Column(
+                        children: [
+                          Image(
+                            image: AssetImage(
+                              'images/gender.png',
+                            ),
+                            width: 40,
+                          ),
+                          Text(
+                            'ກະລຸນາເລືອກເພດ',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                          Text('ທ່ານສາມາດປ່ຽນສະຖານະເພດໃນໜ້າຂໍ້ມູນສ່ວນໂຕຂອງທ່ານ'),
+                          GenderSelected(),
+                          SizedBox(
+                            height: 50,
+                          ),
+                          NextButton(
+                            title: 'ຖັດໄປ',
+                            onPress: () {
+                              if (userModel.sex == null) {
+                                _showDialog();
+                              } else {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => BirthDayPage(),
+                                  ),
+                                );
+                              }
+                            },
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+
                 ),
-                BackToLogin(
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: BackButton(),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: BackToLogin(
                   onPress: () {
                     Navigator.of(context).maybePop().then(
                           (value) => Navigator.of(context).maybePop().then(
@@ -71,8 +79,8 @@ class _GetGenderPageState extends State<GetGenderPage> {
                         );
                   },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

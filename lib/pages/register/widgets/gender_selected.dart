@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mgosme/pages/create_account/adapter/user_adapter.dart';
+import 'package:mgosme/pages/register/adapter/user_adapter.dart';
 
 class GenderSelected extends StatefulWidget {
   @override

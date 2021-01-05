@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mgosme/authen_service/firebase_auth.dart';
+import 'package:mgosme/pages/register/widgets/circle_progress_dialog.dart';
 
 import 'adapter/user_adapter.dart';
 import 'summary_page.dart';
@@ -8,9 +9,16 @@ import 'widgets/button_next.dart';
 
 
 // ignore: must_be_immutable
-class PasswordPage extends StatelessWidget {
+class PasswordPage extends StatefulWidget {
+  @override
+  _PasswordPageState createState() => _PasswordPageState();
+}
+
+class _PasswordPageState extends State<PasswordPage> {
   TextEditingController controller = TextEditingController();
+
   AuthService service = AuthService();
+
   bool loading = false;
 
   @override
@@ -18,7 +26,7 @@ class PasswordPage extends StatelessWidget {
     final _formKey = GlobalKey<FormState>();
     return Scaffold(
       body: SafeArea(
-        child: Container(
+        child: loading==false? Container(
           child: Column(
             children: [
               Align(
@@ -69,6 +77,9 @@ class PasswordPage extends StatelessWidget {
                             NextButton(
                               title: 'ສົງທະບຽນ',
                               onPress: () {
+                                setState(() {
+                                  loading=true;
+                                });
                                 if (_formKey.currentState.validate()) {
                                   print('Email: ${userModel.email}');
                                   print('Email: ${controller.text}');
@@ -78,6 +89,7 @@ class PasswordPage extends StatelessWidget {
                                           userModel.email, controller.text)
                                       .then(
                                     (value) {
+
                                       print('Success');
                                       print(value.email);
                                       userModel.uid = value.uid;
@@ -114,6 +126,13 @@ class PasswordPage extends StatelessWidget {
                       );
                 },
               ),
+            ],
+          ),
+        ):Center(
+          child: Column(
+            children: [
+              CircularProgressIndicator(),
+              Text('ກຳລັງໂຫຼດ...'),
             ],
           ),
         ),
