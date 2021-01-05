@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "144524490962",
+    "firebase_url": "https://mgoapp-63075.firebaseio.com",
+    "project_id": "mgoapp-63075",
+    "storage_bucket": "mgoapp-63075.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144524490962:android:a6ce906e631eba0c9bd50b",
+        "android_client_info": {
+          "package_name": "com.nuthida.mgosme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144524490962-3q8700r09jt6csbpuuhm60fqiasg9utq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAreVs3nIdwNAO_mb5eU4J_yH7LDivKcXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144524490962-3q8700r09jt6csbpuuhm60fqiasg9utq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
