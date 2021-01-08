@@ -146,7 +146,6 @@ class AllWork extends StatelessWidget {
           ],
         ),
         Text('ວັນທີ: ${snapPost.data()['date']}| 12:00'),
-
       ],
     );
   }
