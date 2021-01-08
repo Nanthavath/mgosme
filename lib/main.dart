@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_progress_dialog/flutter_progress_dialog.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/profile_page.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/about.dart';
 import 'package:mgosme/pages/logins/switch_page.dart';
 
 Future<void> main() async {
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
             ),
             title: 'Mgo',
             //home: CreateJob(),
-            home: SwitchPage(),
+            home: Profiles(),
             //home: More(),
             //home: UserHomePage(),
           ),
