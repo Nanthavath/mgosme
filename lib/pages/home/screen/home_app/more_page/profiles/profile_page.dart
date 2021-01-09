@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/about.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/experiance.dart';
@@ -166,9 +167,9 @@ class _ProfilesState extends State<Profiles> {
             child: CircleAvatar(
               radius: 60,
               backgroundColor: Colors.transparent,
-              backgroundImage: NetworkImage(
-                'https://www.sleekcover.com/covers/girl-watching-sunset-facebook-cover.jpg',
-              ),
+              backgroundImage: CachedNetworkImageProvider(
+                  'https://www.sleekcover.com/covers/girl-watching-sunset-facebook-cover.jpg'),
+
             ),
           ),
           Text('Nanthavath Vongsouna',
