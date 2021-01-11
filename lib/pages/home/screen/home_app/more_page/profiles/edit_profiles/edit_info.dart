@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/edit_profiles/education.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/input_formater.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/back_button.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/dropdown_widget.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/next_buttton.dart';
@@ -35,6 +37,19 @@ class _InfoState extends State<Info> {
                       children: [
                         _textInputName(),
                         DropDownWidget(),
+                        _textInputDate(),
+                        _textInput(
+                            ico: 'icons/address.png',
+                            hint: 'ທີ່ຢູ່',
+                            enabled: false),
+                        _textInput(
+                          ico: 'icons/phone.png',
+                          hint: 'ເບີໂທ',
+                        ),
+                        _textInput(
+                          ico: 'icons/email.png',
+                          hint: 'ອີເມລ',
+                        ),
                       ],
                     ),
                   ),
@@ -94,8 +109,8 @@ class _InfoState extends State<Info> {
     return InkWell(
       child: Container(
         margin: EdgeInsets.only(right: 10, bottom: 10),
-        height: 40,
-        width: 40,
+        height: 30,
+        width: 30,
         decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.grey,
@@ -114,13 +129,13 @@ class _InfoState extends State<Info> {
       children: [
         Container(
           margin: EdgeInsets.only(top: 150),
-          height: 150,
-          width: 150,
+          height: 140,
+          width: 140,
           child: Stack(
             children: [
               Container(
-                height: 150,
-                width: 150,
+                height: 140,
+                width: 140,
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.blue,
@@ -180,14 +195,23 @@ class _InfoState extends State<Info> {
     );
   }
 
-  _textInput({TextEditingController controller, String hint, String ico}) {
+  _textInput({
+    TextEditingController controller,
+    String hint,
+    String ico,
+    bool enabled,
+  }) {
     return Container(
       margin: EdgeInsets.only(left: 20, right: 20),
       child: Row(
         children: [
-          Image(
-            image: AssetImage(ico),
+          Container(
             width: 40,
+            child: Image.asset(
+              ico,
+              width: 30,
+              height: 30,
+            ),
           ),
           SizedBox(
             width: 10,
@@ -198,6 +222,7 @@ class _InfoState extends State<Info> {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: TextField(
+                enabled: enabled,
                 controller: controller,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(
@@ -212,6 +237,52 @@ class _InfoState extends State<Info> {
               ),
             ),
           )
+        ],
+      ),
+    );
+  }
+
+  _textInputDate() {
+    return Container(
+      margin: EdgeInsets.only(left: 20, right: 20),
+      child: Row(
+        children: [
+          Container(
+            width: 40,
+            child: Image.asset(
+              'icons/calendar.png',
+              width: 35,
+              height: 35,
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Expanded(
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: TextFormField(
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  LengthLimitingTextInputFormatter(6),
+                  InputFormatter(),
+                ],
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.only(
+                    left: 16,
+                    top: 8,
+                    bottom: 8,
+                    right: 10,
+                  ),
+                  border: OutlineInputBorder(borderSide: BorderSide.none),
+                  hintText: 'DD/MM/YY',
+                ),
+                keyboardType: TextInputType.number,
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/edit_profiles/info.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/edit_profiles/edit_info.dart';
 
 class DropDownWidget extends StatefulWidget {
   @override

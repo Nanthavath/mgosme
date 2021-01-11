@@ -6,7 +6,7 @@ import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/finish
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/review.dart';
 import 'package:mgosme/pages/user_pages/pages/new_technician.dart';
 
-import 'edit_profiles/info.dart';
+import 'edit_profiles/edit_info.dart';
 import 'widgets/back_button.dart';
 
 class Profiles extends StatefulWidget {
