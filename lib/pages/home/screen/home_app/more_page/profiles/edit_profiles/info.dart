@@ -49,7 +49,7 @@ class _InfoState extends State<Info> {
                 onPressed: () {
                   if (gender == '') {
                     print('Please select your gender!!');
-                  }else{
+                  } else {
                     print(' your gender==$gender');
                   }
 

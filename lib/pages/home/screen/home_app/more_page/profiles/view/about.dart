@@ -12,159 +12,51 @@ class _aboutpageState extends State<aboutpage> {
     return Scaffold(
       body: ListView(
         children: [
-          Container(
-            child: Column(
-              children: [
-                Column(
+          _abouttext(
+              text: 'ຊື່ : ຕົ້ນຕານ ແກ້ວມະນີວົງ',
+              top: 10,
+              iconData: Icons.account_circle),
+          _abouttext(text: 'ເພດ : ຊາຍ', iconData: Icons.wc),
+          _abouttext(text: '28/12/1998', iconData: Icons.calendar_today),
+          _abouttext(text: 'ທີ່ຢູ : ດົງໂດກ', iconData: Icons.person_pin_circle),
+          _abouttext(text: '020 59633390', iconData: Icons.phone),
+          _abouttext(text: 'tonkmnv@gmail.com', iconData: Icons.mail_rounded),
+        ],
+      ),
+    );
+  }
+
+  _abouttext({String text, final double top, IconData iconData}) {
+    return Stack(
+      children: [
+        Container(
+          margin: EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: 9),
+                child: Column(
                   children: [
-                    _abouttext('ຈົບຊັ້ນສູ່ງ ຊ່າງການໄຟຟ້າ', 10),
-                    _abouttext('ຈົບໄອທີ ລະບົບ ໄອໄອທີ Smart Home', 1),
-                    _abouttext('ຜູ້ຄຸ່ມງ່ານລະບົບໄຟຟ້າໂຮງແຮມ mgo', 1),
-                    _abouttextmgo('ຮ່ວມວຽກກັບເອມໂກ : ', 10, 'ກັນຍາ 2020'),
-                    _abouttextscore('ຄະແນນລີວີວ : ', 1, '4,5'),
-                    _linecross(),
-                    // _workstatus(),
+                    Icon(iconData, color: Colors.black54, size: 28),
+                    //')
                   ],
                 ),
-              ],
-            ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Row(
+                  children: [
+                    Text(
+                      text,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
-
-  _abouttext(String text, final double top) {
-    return Container(
-      margin: EdgeInsets.only(
-        top: top,
-        left: 30,
-      ),
-      child: Row(
-        children: [
-          Container(
-            child: Icon(
-              Icons.work,
-              color: Colors.black54,
-              size: 30,
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 10),
-            child: Row(
-              children: [
-                Text(
-                  text,
-                  style: TextStyle(fontSize: 16),
-                ),
-                // Text(
-                //   textdate,
-                //   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                // ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  _linecross() {
-    return Container(
-      margin: EdgeInsets.only(left: 30, right: 30, top: 10),
-      color: Colors.grey,
-      height: 1,
-    );
-  }
-
-  _abouttextmgo(String text, final double top, String textdate) {
-    return Container(
-      margin: EdgeInsets.only(
-        top: top,
-        left: 30,
-      ),
-      child: Row(
-        children: [
-          Container(
-            child: Icon(
-              Icons.timer,
-              color: Colors.black54,
-              size: 30,
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 10),
-            child: Row(
-              children: [
-                Text(
-                  text,
-                  style: TextStyle(fontSize: 16),
-                ),
-                Text(
-                  textdate,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  _abouttextscore(String text, final double top, String textdate) {
-    return Container(
-      margin: EdgeInsets.only(
-        top: top,
-        left: 30,
-      ),
-      child: Row(
-        children: [
-          Container(
-            child: Icon(
-              Icons.favorite,
-              color: Colors.black54,
-              size: 30,
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 10),
-            child: Row(
-              children: [
-                Text(
-                  text,
-                  style: TextStyle(fontSize: 16),
-                ),
-                Text(
-                  textdate,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                Container(
-                  padding: EdgeInsets.only(bottom: 5, left: 10),
-                  child: Row(
-                    children: [
-                      Icon(Icons.star, color: Colors.yellow[800]),
-                      Icon(Icons.star, color: Colors.yellow[800]),
-                      Icon(Icons.star, color: Colors.yellow[800]),
-                      Icon(Icons.star, color: Colors.yellow[800]),
-                      Icon(Icons.star, color: Colors.yellow[800]),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  _workstatus() {
-    return Container(
-      child: Text(
-        'ວຽກສຳເລັດ',
-        style: TextStyle(fontSize: 20),
-      ),
+        ),
+      ],
     );
   }
 }
