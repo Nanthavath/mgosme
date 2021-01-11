@@ -15,18 +15,18 @@ class _aboutpageState extends State<aboutpage> {
           _abouttext(
               text: 'ຊື່ : ຕົ້ນຕານ ແກ້ວມະນີວົງ',
               top: 10,
-              iconData: Icons.account_circle),
-          _abouttext(text: 'ເພດ : ຊາຍ', iconData: Icons.wc),
-          _abouttext(text: '28/12/1998', iconData: Icons.calendar_today),
-          _abouttext(text: 'ທີ່ຢູ : ດົງໂດກ', iconData: Icons.person_pin_circle),
-          _abouttext(text: '020 59633390', iconData: Icons.phone),
-          _abouttext(text: 'tonkmnv@gmail.com', iconData: Icons.mail_rounded),
+              ico: 'icons/user.png'),
+          _abouttext(text: 'ເພດ : ຊາຍ', ico: 'icons/gender.png'),
+          _abouttext(text: '28/12/1998', ico: 'icons/calendar.png'),
+          _abouttext(text: 'ທີ່ຢູ : ດົງໂດກ', ico: 'icons/address.png'),
+          _abouttext(text: '020 59633390', ico: 'icons/phone.png'),
+          _abouttext(text: 'tonkmnv@gmail.com', ico: 'icons/email.png'),
         ],
       ),
     );
   }
 
-  _abouttext({String text, final double top, IconData iconData}) {
+  _abouttext({String text, final double top, String ico}) {
     return Stack(
       children: [
         Container(
@@ -34,10 +34,15 @@ class _aboutpageState extends State<aboutpage> {
           child: Row(
             children: [
               Container(
+                height: 28,
+                width: 28,
                 margin: EdgeInsets.only(bottom: 9),
                 child: Column(
                   children: [
-                    Icon(iconData, color: Colors.black54, size: 28),
+                    // Icon(iconData, color: Colors.black54, size: 28),
+                    Image.asset(
+                      ico,
+                    )
                     //')
                   ],
                 ),
