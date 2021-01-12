@@ -5,16 +5,16 @@ class BackButtons extends StatelessWidget {
     return SafeArea(
       child: InkWell(
         child: Container(
-          margin: EdgeInsets.only(left: 10),
+          margin: EdgeInsets.only(left: 10,top: 5),
           width: 40,
           height: 40,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: Colors.white),
+            border: Border.all(color: Colors.deepOrange),
           ),
           child: Icon(
             Icons.arrow_back,
-            color: Colors.white,
+            color: Colors.orange,
           ),
         ),
         onTap: () {
