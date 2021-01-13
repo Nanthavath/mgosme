@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/about.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/experiance.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/finishedwork.dart';
-import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/review.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/reviewpage.dart';
 import 'package:mgosme/pages/user_pages/pages/new_technician.dart';
 
 import 'edit_profiles/edit_info.dart';
@@ -17,12 +17,12 @@ class Profiles extends StatefulWidget {
 class _ProfilesState extends State<Profiles> {
   TabController controller;
   List<Widget> pages = [
-    aboutpage(),
-    experiancepage(),
-    finishedword(),
-    reviewpage(),
+    Aboutpage(),
+    Experiancepage(),
+    Finishedword(),
+    Reviewpage(),
   ];
-
+  double expandedHeight = 300;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -31,7 +31,7 @@ class _ProfilesState extends State<Profiles> {
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
-              expandedHeight: 300,
+              expandedHeight: expandedHeight,
               stretch: true,
               floating: true,
               pinned: true,
@@ -93,10 +93,10 @@ class _ProfilesState extends State<Profiles> {
               child: TabBarView(
                 controller: controller,
                 children: [
-                  aboutpage(),
-                  experiancepage(),
-                  finishedword(),
-                  reviewpage(),
+                  Aboutpage(),
+                  Experiancepage(),
+                  Finishedword(),
+                  Reviewpage(),
                 ],
               ),
             )
@@ -169,7 +169,6 @@ class _ProfilesState extends State<Profiles> {
               backgroundColor: Colors.transparent,
               backgroundImage: CachedNetworkImageProvider(
                   'https://www.sleekcover.com/covers/girl-watching-sunset-facebook-cover.jpg'),
-
             ),
           ),
           Text('Nanthavath Vongsouna',

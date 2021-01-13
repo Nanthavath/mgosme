@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class finishedword extends StatefulWidget {
+class Finishedword extends StatefulWidget {
   @override
-  _finishedwordState createState() => _finishedwordState();
+  _FinishedwordState createState() => _FinishedwordState();
 }
 
-class _finishedwordState extends State<finishedword> {
+class _FinishedwordState extends State<Finishedword> {
   @override
   Widget build(BuildContext context) {
-       return Scaffold(
+    return Scaffold(
       body: Container(
         child: Text(
           'page3',
