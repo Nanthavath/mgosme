@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/input_formater.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/input_formater.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/back_button.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/dropdown_widget.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/maps_address.dart';

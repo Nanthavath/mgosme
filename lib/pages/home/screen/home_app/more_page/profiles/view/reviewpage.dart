@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mgosme/pages/home/menu_popup.dart';
+import 'package:mgosme/pages/home/screen/home_app/home/home.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/popup_menu.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/stars_popup.dart';
+import 'package:mgosme/utilities/alert_dialog.dart';
 
 class Reviewpage extends StatefulWidget {
   @override
@@ -11,6 +16,21 @@ class _ReviewpageState extends State<Reviewpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   actions: [
+      //     PopupMenuButton(
+      //       onSelected: choiceAction,
+      //       itemBuilder: (BuildContext context) {
+      //         return Constants_review.choices.map((String choice) {
+      //           return PopupMenuItem<String>(
+      //             value: choice,
+      //             child: Text(choice),
+      //           );
+      //         }).toList();
+      //       },
+      //     ),
+      //   ],
+      // ),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -202,7 +222,17 @@ class _ReviewpageState extends State<Reviewpage> {
       ),
       child: FlatButton(
         onPressed: () {
-          print('comment = $txtcomment');
+          if (txtcomment == '') {
+            print('please input infomation');
+          } else {
+            // print('comment = $txtcomment');
+            // CustomAlertDialogStars().alertDialog(
+            //   context: context,
+            //   title: 'hai dao',
+            //   icon: Icons.sim_card_alert,
+            //   message: 'give stars',
+            // );
+          }
         },
         child: Text(
           'ຕົກລົງ',
@@ -219,17 +249,17 @@ class _ReviewpageState extends State<Reviewpage> {
           textusercomment(
               image: 'icons/user.png',
               name: 'ຕົ້ນຕານ',
-              time: 'one day ago',
+              time: '1 day ago',
               commenttext: 'ການບໍ່ລິການໄດ້ດີຫຼາຍ ແຕ່ເຮັດດົນ'),
           textusercomment(
               image: 'icons/user.png',
               name: 'ຈອນ',
-              time: 'two days ago',
+              time: '2 days ago',
               commenttext: 'ເຮັດດົນຫຼາຍ'),
           textusercomment(
               image: 'icons/user.png',
               name: 'ບິບໄຫ່ຍ',
-              time: 'three days ago',
+              time: '3 days ago',
               commenttext: 'ເຮັດຜິດຫັນ ແລ້ວກະດົນຫຼາຍ'),
         ],
       ),
@@ -293,6 +323,7 @@ class _ReviewpageState extends State<Reviewpage> {
                   ],
                 ),
               ),
+              menupopupbutton(),
             ],
           ),
         ],
@@ -312,5 +343,36 @@ class _ReviewpageState extends State<Reviewpage> {
         ),
       ),
     );
+  }
+
+  menupopupbutton() {
+    return Container(
+      margin: EdgeInsets.only(left: 180),
+      child: Column(
+        children: [
+          PopupMenuButton(
+            onSelected: choiceAction,
+            child: Text('...'),
+            itemBuilder: (BuildContext context) {
+              return Constants_review.choices.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice),
+                );
+              }).toList();
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  void choiceAction(String choice) {
+    if (choice == Constants_review.update) {
+      print('update');
+    }
+    if (choice == Constants_review.delete) {
+      print('delete');
+    }
   }
 }
