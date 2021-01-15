@@ -230,25 +230,27 @@ class _ReviewpageState extends State<Reviewpage> {
   }
 
   usercomment() {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          textusercomment(
-              image: 'icons/user.png',
-              name: 'ຕົ້ນຕານ',
-              time: '1 day ago',
-              commenttext: 'ການບໍ່ລິການໄດ້ດີຫຼາຍ ແຕ່ເຮັດດົນ'),
-          textusercomment(
-              image: 'icons/user.png',
-              name: 'ຈອນ',
-              time: '2 days ago',
-              commenttext: 'ເຮັດດົນຫຼາຍ'),
-          textusercomment(
-              image: 'icons/user.png',
-              name: 'ບິບໄຫ່ຍ',
-              time: '3 days ago',
-              commenttext: 'ເຮັດຜິດຫັນ ແລ້ວກະດົນຫຼາຍ'),
-        ],
+    return Container(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            textusercomment(
+                image: 'icons/user.png',
+                name: 'ຕົ້ນຕານ',
+                time: '1 day ago',
+                commenttext: 'ເຮັດດົນໂພດ ລາຄາກາແພງເກີນ ເຮັດບໍ່ດົນາເປ້ '),
+            textusercomment(
+                image: 'icons/user.png',
+                name: 'ຈອນ',
+                time: '2 days ago',
+                commenttext: 'ເຮັດບໍ່ຖືກໃຈ'),
+            textusercomment(
+                image: 'icons/user.png',
+                name: 'ບິບໄຫ່ຍ',
+                time: '3 days ago',
+                commenttext: 'ເຮັດຜິດຫັນ ແລ້ວກະດົນຫຼາຍ'),
+          ],
+        ),
       ),
     );
   }
@@ -304,14 +306,12 @@ class _ReviewpageState extends State<Reviewpage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 30, left: 20),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      commenttext,
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ],
+                // color: Colors.blue,
+                width: 185,
+                margin: EdgeInsets.only(top: 30, left: 20, right: 10),
+                child: Text(
+                  commenttext,
+                  style: TextStyle(fontSize: 12),
                 ),
               ),
               menupopupbutton(),
