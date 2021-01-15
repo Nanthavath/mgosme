@@ -1,36 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:mgosme/pages/home/menu_popup.dart';
 import 'package:mgosme/pages/home/screen/home_app/home/home.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/experiance.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/popup_menu.dart';
-import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/stars_popup.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/showdialog.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/widgets/stars_give.dart';
 import 'package:mgosme/utilities/alert_dialog.dart';
+
+class textcomment {
+  textcomment();
+  textcomments({
+    BuildContext context,
+  }) {
+    return txtcommentss;
+  }
+}
 
 class Reviewpage extends StatefulWidget {
   @override
   _ReviewpageState createState() => _ReviewpageState();
 }
 
-String txtcomment;
+String txtcommentss;
+double starrating;
 
 class _ReviewpageState extends State<Reviewpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   actions: [
-      //     PopupMenuButton(
-      //       onSelected: choiceAction,
-      //       itemBuilder: (BuildContext context) {
-      //         return Constants_review.choices.map((String choice) {
-      //           return PopupMenuItem<String>(
-      //             value: choice,
-      //             child: Text(choice),
-      //           );
-      //         }).toList();
-      //       },
-      //     ),
-      //   ],
-      // ),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -64,7 +61,11 @@ class _ReviewpageState extends State<Reviewpage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    iconstar(),
+                    ShowalertStars().stars_const(
+                        context: context,
+                        size: 18,
+                        readonly: true,
+                        ratingstars: 4)
                   ],
                 )
               ],
@@ -149,20 +150,6 @@ class _ReviewpageState extends State<Reviewpage> {
     );
   }
 
-  iconstar() {
-    return Container(
-      child: Row(
-        children: [
-          Icon(Icons.star, size: 18, color: Colors.yellow),
-          Icon(Icons.star, size: 18, color: Colors.yellow),
-          Icon(Icons.star_half, size: 18, color: Colors.yellow),
-          Icon(Icons.star_border, size: 18, color: Colors.yellow),
-          Icon(Icons.star_border, size: 18, color: Colors.yellow),
-        ],
-      ),
-    );
-  }
-
   line() {
     return Container(
         margin: EdgeInsets.only(left: 20, right: 20, bottom: 5),
@@ -203,7 +190,7 @@ class _ReviewpageState extends State<Reviewpage> {
           ),
         ),
         onChanged: (String value) {
-          txtcomment = value;
+          txtcommentss = value;
         },
       ),
     );
@@ -222,16 +209,16 @@ class _ReviewpageState extends State<Reviewpage> {
       ),
       child: FlatButton(
         onPressed: () {
-          if (txtcomment == '') {
-            print('please input infomation');
+          if (txtcommentss == '' || txtcommentss == null) {
+            CustomAlertDialogStars().alertDialog(
+              context: context,
+              title: 'ຜິດພາດ',
+              icon: Icons.error_outline,
+              message: 'ກະລຸນາຕື່ມຂໍ້ມູນ',
+            );
           } else {
-            // print('comment = $txtcomment');
-            // CustomAlertDialogStars().alertDialog(
-            //   context: context,
-            //   title: 'hai dao',
-            //   icon: Icons.sim_card_alert,
-            //   message: 'give stars',
-            // );
+            ShowalertStars().showstars(context: context);
+            //print('text = $txtcomment');
           }
         },
         child: Text(
@@ -308,7 +295,11 @@ class _ReviewpageState extends State<Reviewpage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    iconstar(),
+                    ShowalertStars().stars_const(
+                        context: context,
+                        size: 18,
+                        readonly: true,
+                        ratingstars: 2),
                   ],
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class CustomAlertDialogStars {
   CustomAlertDialogStars();
@@ -26,16 +27,10 @@ class CustomAlertDialogStars {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: Text('ໄຫ້ດາວ'),
+            child: Text('ຕົກລົງ'),
           )
         ],
       ),
     );
   }
-
-  // snackBar(BuildContext context) {
-  //   return Scaffold.of(context)
-  //       // ignore: deprecated_member_use
-  //       .showSnackBar(SnackBar(content: Text('Register')));
-  // }
 }
