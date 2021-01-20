@@ -44,6 +44,7 @@ class _ReviewpageState extends State<Reviewpage> {
   }
 
   staraverage() {
+    double countstars = 3.5;
     return Align(
       child: Row(
         children: [
@@ -55,7 +56,7 @@ class _ReviewpageState extends State<Reviewpage> {
               children: [
                 Text('ຄ່າສະເລຍ'),
                 Text(
-                  '2,5',
+                  '$countstars',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
                 Row(
@@ -65,7 +66,7 @@ class _ReviewpageState extends State<Reviewpage> {
                         context: context,
                         size: 18,
                         readonly: true,
-                        ratingstars: 4)
+                        ratingstars: countstars),
                   ],
                 )
               ],

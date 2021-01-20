@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'NotoSansLao',
             ),
             title: 'Mgo',
+
             //home: CreateJob(),
             home: Profiles(),
             //home: More(),

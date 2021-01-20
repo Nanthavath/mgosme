@@ -18,10 +18,10 @@ class _AboutpageState extends State<Aboutpage> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   _abouttext(
-                      text: 'ຊື່ : ຕົ້ນຕານ ແກ້ວມະນີວົງ',
+                      text: 'ຊື່ : ຕົ້ນຕານ ແກ້ວມະນີວົງ ແກ້ວມະນີວົງ ແກ້ວມະນີວົງ',
                       top: 10,
                       ico: 'icons/user.png'),
                   _abouttext(text: 'ເພດ : ຊາຍ', ico: 'icons/gender.png'),
@@ -39,6 +39,10 @@ class _AboutpageState extends State<Aboutpage> {
   }
 
   _abouttext({String text, final double top, String ico}) {
+    if (text.length > 40) {
+      text = text.substring(0, 40);
+      text = '$text ...';
+    }
     return Stack(
       children: [
         Container(
@@ -46,26 +50,26 @@ class _AboutpageState extends State<Aboutpage> {
           child: Row(
             children: [
               Container(
-                height: 25,
-                width: 25,
                 margin: EdgeInsets.only(bottom: 9),
                 child: Column(
                   children: [
-                    // Icon(iconData, color: Colors.black54, size: 28),
                     Image.asset(
                       ico,
+                      height: 30,
+                      width: 30,
                     )
                     //')
                   ],
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 10),
+                margin: EdgeInsets.only(left: 10, bottom: 5),
+                width: 310,
                 child: Row(
                   children: [
                     Text(
                       text,
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 18),
                     ),
                   ],
                 ),
