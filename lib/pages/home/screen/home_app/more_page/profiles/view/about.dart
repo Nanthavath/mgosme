@@ -62,16 +62,20 @@ class _AboutpageState extends State<Aboutpage> {
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(left: 10, bottom: 5),
-                width: 310,
-                child: Row(
-                  children: [
-                    Text(
-                      text,
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ],
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(left: 10, bottom: 5),
+                  width: 310,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          text,
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

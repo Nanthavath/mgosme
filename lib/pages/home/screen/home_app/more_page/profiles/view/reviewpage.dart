@@ -9,9 +9,7 @@ import 'package:mgosme/utilities/alert_dialog.dart';
 
 class textcomment {
   textcomment();
-  textcomments({
-    BuildContext context,
-  }) {
+  textcomments({BuildContext context}) {
     return txtcommentss;
   }
 }
@@ -28,8 +26,10 @@ class _ReviewpageState extends State<Reviewpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         child: Container(
+          //margin: EdgeInsets.only(right: 20, left: 20),
           child: Column(
             children: [
               staraverage(),
@@ -50,21 +50,24 @@ class _ReviewpageState extends State<Reviewpage> {
         children: [
           // big stars
           Container(
-            height: 120,
+            height: 110,
             width: 120,
+            margin: EdgeInsets.only(left: 30),
             child: Column(
               children: [
+                SizedBox(height: 10),
                 Text('ຄ່າສະເລຍ'),
                 Text(
                   '$countstars',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
                 ),
+                SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ShowalertStars().stars_const(
                         context: context,
-                        size: 18,
+                        size: 19,
                         readonly: true,
                         ratingstars: countstars),
                   ],
@@ -77,7 +80,8 @@ class _ReviewpageState extends State<Reviewpage> {
             child: Stack(
               children: [
                 Container(
-                  height: 120,
+                  margin: EdgeInsets.only(left: 15),
+                  height: 110,
                   child: Column(
                     children: [
                       SizedBox(height: 10),
@@ -104,7 +108,7 @@ class _ReviewpageState extends State<Reviewpage> {
 
   _textquarlity({String textquarlitu, double top}) {
     return Container(
-      margin: EdgeInsets.only(left: 160, top: top),
+      margin: EdgeInsets.only(top: top, left: 180),
       child: Text(textquarlitu),
     );
   }
@@ -153,7 +157,7 @@ class _ReviewpageState extends State<Reviewpage> {
 
   line() {
     return Container(
-        margin: EdgeInsets.only(left: 20, right: 20, bottom: 5),
+        margin: EdgeInsets.only(left: 30, right: 30, bottom: 8),
         color: Colors.grey,
         height: 1);
   }
@@ -162,6 +166,7 @@ class _ReviewpageState extends State<Reviewpage> {
     return Stack(
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _textcomment(),
             _buttoncomment(),
@@ -176,7 +181,7 @@ class _ReviewpageState extends State<Reviewpage> {
     return Container(
       height: 50,
       width: 200,
-      margin: EdgeInsets.only(left: 40),
+      margin: EdgeInsets.only(left: 30),
       child: TextField(
         decoration: InputDecoration(
           contentPadding:
@@ -198,33 +203,36 @@ class _ReviewpageState extends State<Reviewpage> {
   }
 
   _buttoncomment() {
-    return Container(
-      height: 30,
-      width: 64,
-      margin: EdgeInsets.only(left: 10, bottom: 20),
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.all(
-          Radius.circular(40),
+    return Expanded(
+      child: Container(
+        height: 30,
+        // width: 64,
+
+        margin: EdgeInsets.only(left: 10, bottom: 20, right: 80),
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.all(
+            Radius.circular(40),
+          ),
         ),
-      ),
-      child: FlatButton(
-        onPressed: () {
-          if (txtcommentss == '' || txtcommentss == null) {
-            CustomAlertDialogStars().alertDialog(
-              context: context,
-              title: 'ຜິດພາດ',
-              icon: Icons.error_outline,
-              message: 'ກະລຸນາຕື່ມຂໍ້ມູນ',
-            );
-          } else {
-            ShowalertStars().showstars(context: context);
-            //print('text = $txtcomment');
-          }
-        },
-        child: Text(
-          'ຕົກລົງ',
-          style: TextStyle(color: Colors.white),
+        child: FlatButton(
+          onPressed: () {
+            if (txtcommentss == '' || txtcommentss == null) {
+              CustomAlertDialogStars().alertDialog(
+                context: context,
+                title: 'ຜິດພາດ',
+                icon: Icons.error_outline,
+                message: 'ກະລຸນາຕື່ມຂໍ້ມູນ',
+              );
+            } else {
+              ShowalertStars().showstars(context: context);
+              //print('text = $txtcomment');
+            }
+          },
+          child: Text(
+            'ຕົກລົງ',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ),
     );
@@ -237,9 +245,10 @@ class _ReviewpageState extends State<Reviewpage> {
           children: [
             textusercomment(
                 image: 'icons/user.png',
-                name: 'ຕົ້ນຕານ',
+                name: 'ຕົ້ນຕານຕົ້ນຕານ',
                 time: '1 day ago',
-                commenttext: 'ເຮັດດົນໂພດ ລາຄາກາແພງເກີນ ເຮັດບໍ່ດົນາເປ້ '),
+                commenttext:
+                    'ເຮັດດົນໂພດ ລາຄາກາແພງເກີນ  ເຮັດບໍ່ດົນກາເປ້ເຮັດບໍ່ດົນາເປ້ ເຮັດບໍ່ດົນກາເປ້ເຮັດບໍ່ດົນາເປ້ ເຮັດບໍ່ດົນກາເປ້ເຮັດບໍ່ດົນາເປ້ ເຮັດບໍ່ດົນກາເປ້ເຮັດບໍ່ດົນາເປ້ ເຮັດບໍ່ດົນກາເປ້ເຮັດບໍ່ດົນາເປ້ ເຮັດບໍ່ດົນກາເປ້ເຮັດບໍ່ດົນາເປ້'),
             textusercomment(
                 image: 'icons/user.png',
                 name: 'ຈອນ',
@@ -247,7 +256,7 @@ class _ReviewpageState extends State<Reviewpage> {
                 commenttext: 'ເຮັດບໍ່ຖືກໃຈ'),
             textusercomment(
                 image: 'icons/user.png',
-                name: 'ບິບໄຫ່ຍ',
+                name: 'tontan',
                 time: '3 days ago',
                 commenttext: 'ເຮັດຜິດຫັນ ແລ້ວກະດົນຫຼາຍ'),
           ],
@@ -262,6 +271,14 @@ class _ReviewpageState extends State<Reviewpage> {
     String time,
     String commenttext,
   }) {
+    if (name.length > 7) {
+      name = name.substring(0, 07);
+      name = '$name..';
+    }
+    if (commenttext.length > 150) {
+      commenttext = commenttext.substring(0, 150);
+      commenttext = '$commenttext...';
+    }
     return Container(
       margin: EdgeInsets.only(left: 20, right: 20),
       child: Row(
@@ -292,9 +309,10 @@ class _ReviewpageState extends State<Reviewpage> {
             ],
           ),
           Stack(
+            alignment: Alignment.topRight,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 10, left: 20),
+                margin: EdgeInsets.only(top: 10, right: 160),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -308,7 +326,7 @@ class _ReviewpageState extends State<Reviewpage> {
               ),
               Container(
                 // color: Colors.blue,
-                width: 185,
+                width: 240,
                 margin: EdgeInsets.only(top: 30, left: 20, right: 10),
                 child: Text(
                   commenttext,
@@ -339,7 +357,7 @@ class _ReviewpageState extends State<Reviewpage> {
 
   menupopupbutton() {
     return Container(
-      margin: EdgeInsets.only(left: 180),
+      //  margin: EdgeInsets.only(left: 220),
       child: Column(
         children: [
           PopupMenuButton(
