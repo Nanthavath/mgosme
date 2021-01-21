@@ -206,8 +206,7 @@ class _ReviewpageState extends State<Reviewpage> {
     return Expanded(
       child: Container(
         height: 30,
-        // width: 64,
-
+        width: 64,
         margin: EdgeInsets.only(left: 10, bottom: 20, right: 80),
         decoration: BoxDecoration(
           color: Colors.blue,
@@ -379,7 +378,7 @@ class _ReviewpageState extends State<Reviewpage> {
 
   void choiceAction(String choice) {
     if (choice == Constants_review.update) {
-      print('update');
+      ShowalertStars().showbottomsheetwidget(context: context);
     }
     if (choice == Constants_review.delete) {
       print('delete');

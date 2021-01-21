@@ -6,6 +6,60 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 class ShowalertStars {
   double rating = 0.0;
   ShowalertStars();
+  showbottomsheetwidget({BuildContext context}) {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            // height: 300,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.edit_outlined, size: 30),
+                    SizedBox(width: 10),
+                    Text("ແກ້ໄຂ", style: TextStyle(fontSize: 25)),
+                  ],
+                ),
+                SizedBox(height: 30),
+                ShowalertStars()
+                    .stars_giver(context: context, readonly: false, size: 50),
+                SizedBox(height: 20),
+                Container(
+                  width: 300,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide(color: Colors.grey)),
+                        contentPadding: EdgeInsets.only(right: 20, left: 20),
+                        hintText: 'ຄຳເຫັນ'),
+                  ),
+                ),
+                SizedBox(height: 30),
+                Container(
+                  height: 40,
+                  width: 100,
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(30)),
+                  child: FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      'ຕົກລົງ',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
+  }
+
   showstars({BuildContext context}) {
     return showDialog(
         context: context,
