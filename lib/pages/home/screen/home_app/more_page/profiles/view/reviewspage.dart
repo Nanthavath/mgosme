@@ -23,7 +23,7 @@ class _Review_pagesState extends State<Review_pages> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.symmetric(vertical: 20),
+        margin: EdgeInsets.symmetric(vertical: 10),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -67,7 +67,7 @@ class _Review_pagesState extends State<Review_pages> {
     return Container(
       // height: 110,
       // width: 120,
-      margin: EdgeInsets.only(left: 20),
+      //margin: EdgeInsets.only(left: 20),
       child: Column(
         children: [
           // SizedBox(height: 10),
@@ -78,7 +78,7 @@ class _Review_pagesState extends State<Review_pages> {
           ),
           SizedBox(height: 5),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               ShowalertStars().stars_const(
                   context: context,
@@ -96,7 +96,7 @@ class _Review_pagesState extends State<Review_pages> {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 15),
+          margin: EdgeInsets.only(left: 20),
           // height: 110,
           child: Column(
             children: [
@@ -120,7 +120,7 @@ class _Review_pagesState extends State<Review_pages> {
 
   _textquarlity({String textquarlitu, double top}) {
     return Container(
-      margin: EdgeInsets.only(top: top, left: 180),
+      margin: EdgeInsets.only(top: top, left: 200),
       child: Text(textquarlitu),
     );
   }
@@ -215,36 +215,33 @@ class _Review_pagesState extends State<Review_pages> {
   }
 
   _buttoncomment() {
-    return Expanded(
-      child: Container(
-        height: 30,
-        // width: 64,
-        // margin: EdgeInsets.only(left: 10, bottom: 20, right: 80),
-        margin: EdgeInsets.only(left: 10, bottom: 20),
-        decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.all(
-            Radius.circular(40),
-          ),
+    return Container(
+      height: 30,
+      width: 80,
+      margin: EdgeInsets.only(left: 10, bottom: 20),
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        borderRadius: BorderRadius.all(
+          Radius.circular(40),
         ),
-        child: FlatButton(
-          onPressed: () {
-            if (txtcommentss == '' || txtcommentss == null) {
-              CustomAlertDialogStars().alertDialog(
-                context: context,
-                title: 'ຜິດພາດ',
-                icon: Icons.error_outline,
-                message: 'ກະລຸນາຕື່ມຂໍ້ມູນ',
-              );
-            } else {
-              ShowalertStars().showstars(context: context);
-              //print('text = $txtcomment');
-            }
-          },
-          child: Text(
-            'ຕົກລົງ',
-            style: TextStyle(color: Colors.white),
-          ),
+      ),
+      child: FlatButton(
+        onPressed: () {
+          if (txtcommentss == '' || txtcommentss == null) {
+            CustomAlertDialogStars().alertDialog(
+              context: context,
+              title: 'ຜິດພາດ',
+              icon: Icons.error_outline,
+              message: 'ກະລຸນາຕື່ມຂໍ້ມູນ',
+            );
+          } else {
+            ShowalertStars().showstars(context: context);
+            //print('text = $txtcomment');
+          }
+        },
+        child: Text(
+          'ຕົກລົງ',
+          style: TextStyle(color: Colors.white),
         ),
       ),
     );

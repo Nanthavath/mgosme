@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/about.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/experiance.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/finishedwork.dart';
-import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/reviewpage.dart';
 import 'package:mgosme/pages/user_pages/pages/new_technician.dart';
 
 import 'edit_profiles/edit_info.dart';
