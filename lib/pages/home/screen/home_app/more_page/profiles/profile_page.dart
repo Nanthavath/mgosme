@@ -7,6 +7,7 @@ import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/review
 import 'package:mgosme/pages/user_pages/pages/new_technician.dart';
 
 import 'edit_profiles/edit_info.dart';
+import 'view/reviewspage.dart';
 import 'widgets/back_button.dart';
 
 class Profiles extends StatefulWidget {
@@ -20,7 +21,7 @@ class _ProfilesState extends State<Profiles> {
     Aboutpage(),
     Experiancepage(),
     Finishedword(),
-    Reviewpage(),
+    Review_pages(),
   ];
   double expandedHeight = 300;
   @override
@@ -96,7 +97,7 @@ class _ProfilesState extends State<Profiles> {
                   Aboutpage(),
                   Experiancepage(),
                   Finishedword(),
-                  Reviewpage(),
+                  Review_pages(),
                 ],
               ),
             )

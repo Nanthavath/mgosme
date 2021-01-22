@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/experiance.dart';
 import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/reviewpage.dart';
+import 'package:mgosme/pages/home/screen/home_app/more_page/profiles/view/reviewspage.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class ShowalertStars {
@@ -99,7 +100,7 @@ class ShowalertStars {
                   FlatButton(
                     onPressed: ({String value}) {
                       print('count = $rating');
-                      print(textcomment().textcomments(context: context));
+                      print(textcommentt().textcomments(context: context));
                     },
                     child: Text('ຕົກລົງ'),
                   ),
